@@ -11,6 +11,7 @@ export default function ComponenteMenu() {
                         <a className="nav-link active" aria-current="page" href="/">Inicio</a>
                         <a className="nav-link" href="/autores">Autores</a>
                         <a className="nav-link" href="/libros">Libros</a>
+                        <a className="nav-link" href="/prueba">Prueba</a>
                     </div>
                 </div>
             </div>

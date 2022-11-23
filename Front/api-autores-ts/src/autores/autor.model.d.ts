@@ -3,3 +3,8 @@ export interface AutorDTO{
     nombre: string;
     estado:boolean;
 }
+
+export interface AutorRegistrarDTO{
+    nombre:string;
+    estado:boolean;
+}
