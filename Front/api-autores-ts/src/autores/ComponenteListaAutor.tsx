@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AutorDTO } from "./autor.model";
@@ -14,7 +14,7 @@ export default function ComponenteListaAutor() {
   // }, []);
 
   //definimos la direccion del END POINT
-  const url = "https://localhost:5001/api-autores/autor";
+  const url = "https://localhost:44367/api-autores/autor";
   //creamos una variable y una funcion
   //variable --> autores
   //funcion --> setAutores
@@ -38,6 +38,7 @@ export default function ComponenteListaAutor() {
   return (
     <div>
       <h1>Lista de Autores</h1>
+
       <div className="table-responsive">
         <table className="table table-hover table-bordered">
           <thead className="table-dark">
@@ -57,27 +58,29 @@ export default function ComponenteListaAutor() {
                 <td>{autor.nombre}</td>
                 {autor.estado ? <td>Habilitado</td> : <td>Deshabilitado</td>}
                 <td>
-                  <a
-                    href="/autores/actualizar/${autor.codigoautor}"
+                  <Link
+                    to={`/autores/actualizar/${autor.codigoautor}`}
                     className="btn btn-success"
                   >
                     Actualizar
-                  </a>
+                  </Link>
                 </td>
                 <td>
-                  <a href="#" className="btn btn-danger">
+                  <Link
+                    to={`/autores/eliminar/${autor.codigoautor}`}
+                    className="btn btn-danger"
+                  >
                     Eliminar
-                  </a>
+                  </Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      <a href="autores/registrar" className="btn btn-primary">
+      <Link to="/autores/registrar" className="btn btn-primary">
         Registrar Autor
-      </a>
+      </Link>
     </div>
   );
 }
