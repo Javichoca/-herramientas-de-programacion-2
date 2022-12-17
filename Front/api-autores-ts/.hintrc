@@ -25,6 +25,7 @@
           "accent-color"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }

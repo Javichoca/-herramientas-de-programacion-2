@@ -14,7 +14,7 @@ export default function ComponenteListaAutor() {
   // }, []);
 
   //definimos la direccion del END POINT
-  const url = "https://localhost:44367/api-autores/autor";
+  const url = "https://localhost:5001/api-autores/autor";
   //creamos una variable y una funcion
   //variable --> autores
   //funcion --> setAutores
@@ -55,10 +55,10 @@ export default function ComponenteListaAutor() {
               <tr key={autor.codigoautor}>
                 <th scope="row">{autor.codigoautor}</th>
                 <td>{autor.nombre}</td>
-                <td>{autor.estado}</td>
+                {autor.estado ? <td>Habilitado</td> : <td>Deshabilitado</td>}
                 <td>
                   <a
-                    href="/autores/actualizar/${Autor.codigoautor}"
+                    href="/autores/actualizar/${autor.codigoautor}"
                     className="btn btn-success"
                   >
                     Actualizar

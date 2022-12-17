@@ -51,7 +51,15 @@ namespace api_autores.Controllers
         {
             var autor = await context.Autor
                 .FirstOrDefaultAsync(x => x.codigoautor == id);
-            return autor;
+            if (autor == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return autor;
+            }
+
 
         }
 
